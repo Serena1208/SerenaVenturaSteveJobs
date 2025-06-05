@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Da Michele</title>
+    <link rel="stylesheet" href="damichele.css">
+</head>
+<!DOCTYPE html>
+<html lang="it">
+
+<body>
+  
+
+
+    <div class="container">
+         <nav class="navbar">
+  
+  <label for="toggle" class="burger">☰</label>
+  <ul class="menu">
+      </ul>
+</nav>
+        <h1>Da Michele</h1>
+         <div class="box-1">
+            <h2>Chi siamo</h2>
+            <p class="chisiamo">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </div>
+    </div>
+<div class="le-pizze-più-richieste">
+        <p>Le pizze più richieste</p>
+    </div>
+
+    <div>
+        <figure class="cover">
+            <div class="pizza1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg"
+                    alt="">
+
+                <h3>Margherita</h3>
+                <p>10,00 €</p>
+            </div>
+            <div class="pizza2">
+                <img src="https://res.cloudinary.com/tf-lab/image/upload/w_450,h_450,c_fill,g_auto:subject,q_auto,f_auto/restaurant/9dcbbb8b-f333-4de4-aeb0-5d14129c4f6b/ee945f1d-e707-45e5-a376-f12f4ddda476.jpg"
+                    alt="">
+                <h3>Mortadella</h3>
+                <p>15,00 €</p>
+            </div>
+            <div class="pizza3">
+
+                <img src="https://t3.ftcdn.net/jpg/00/63/66/80/360_F_63668085_Raa1wKc3Vuc0E62xjnYejnqwtA2KLksd.jpg"
+                    alt="">
+                <h3>Patatine</h3>
+                <p>13,00 €</p>
+            </div>
+        </figure>
+    </div>
+    <div class="menu-button-container">
+        <button class="menu-button">Guarda il Menu' completo</button>
+        <div id="menu-list" class="hidden"></div>
+
+      
+    </div>
+    <script>
+    const menu = [
+        { nome: "Margherita", prezzo: "10,00 €" },
+        { nome: "Mortadella", prezzo: "15,00 €" },
+        { nome: "Patatine", prezzo: "13,00 €" },
+        { nome: "Diavola", prezzo: "12,00 €" },
+        { nome: "Quattro Formaggi", prezzo: "14,00 €" }
+    ];
+
+    const button = document.querySelector(".menu-button");
+    const menuList = document.getElementById("menu-list");
+    let menuVisible = false;
+
+    button.addEventListener("click", () => {
+        if (!menuVisible) {
+            let html = "<ul>";
+            menu.forEach(pizza => {
+                html += `<li><strong>${pizza.nome}</strong> - ${pizza.prezzo}</li>`;
+            });
+            html += "</ul>";
+            menuList.innerHTML = html;
+            menuList.classList.remove("hidden");
+            button.textContent = "Nascondi il Menu'";
+        } else {
+            menuList.classList.add("hidden");
+            menuList.innerHTML = "";
+            button.textContent = "Guarda il Menu' completo";
+        }
+        menuVisible = !menuVisible;
+    });
+</script>
+
+
+
+</body>
+
+</html>
